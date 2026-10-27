@@ -1,0 +1,138 @@
+:root {
+  --ig-bg: #ffffff;
+  --ig-text: #000000;
+  --ig-muted: #737373;
+  --ig-border: #dbdbdb;
+  --ig-hover: #fafafa;
+  --ig-active: #efefef;
+  --ig-bubble: #efefef;
+  --ig-blue: #0095f6;
+  --ig-blue-bubble: #3797f0;
+  --ig-input: #fafafa;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ig-bg: #000000;
+    --ig-text: #f5f5f5;
+    --ig-muted: #a8a8a8;
+    --ig-border: #262626;
+    --ig-hover: #121212;
+    --ig-active: #262626;
+    --ig-bubble: #262626;
+    --ig-input: #121212;
+  }
+}
+
+/* Перекрываем стили шаблона Vite из main.css */
+#app {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+body {
+  display: block;
+  background: var(--ig-bg);
+  color: var(--ig-text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--ig-blue);
+  font-weight: 600;
+  padding: 0;
+}
+a:hover {
+  background: none;
+}
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+input {
+  font: inherit;
+  color: var(--ig-text);
+  outline: none;
+}
+
+.muted {
+  color: var(--ig-muted);
+}
+
+.btn-primary {
+  background: var(--ig-blue);
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+}
+
+/* Страницы входа / регистрации */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+}
+.auth-card {
+  width: 100%;
+  max-width: 350px;
+  border: 1px solid var(--ig-border);
+  padding: 32px 40px 24px;
+  text-align: center;
+}
+.auth-card.small {
+  padding: 20px;
+}
+.auth-card .logo {
+  font-family: 'Brush Script MT', 'Segoe Script', cursive;
+  font-size: 48px;
+  font-weight: 400;
+  margin: 0 0 24px;
+}
+.auth-card .subtitle {
+  color: var(--ig-muted);
+  font-weight: 600;
+  font-size: 16px;
+  margin: -8px 0 16px;
+}
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.auth-card input {
+  background: var(--ig-input);
+  border: 1px solid var(--ig-border);
+  border-radius: 3px;
+  padding: 9px 8px;
+  font-size: 12px;
+}
+.auth-card input:focus {
+  border-color: var(--ig-muted);
+}
+.auth-card .btn-primary {
+  margin-top: 10px;
+  padding: 7px;
+}
+.error {
+  color: #ed4956;
+  margin: 12px 0 0;
+}
